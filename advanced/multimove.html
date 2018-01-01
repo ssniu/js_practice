@@ -1,0 +1,61 @@
+<!Doctype html>
+<html>
+<head>
+    <title>speedup 01</title>
+    <style>
+
+    #div1 {
+        width: 100px;
+        height: 100px;
+        background: red;
+
+
+    }
+    </style>
+
+    <script>
+    window.onload = function(){
+        var oDiv = document.getElementById('div1');
+        oDiv.onmouseover = function(){
+            move(400);
+        }
+        oDiv.onmouseout = function(){
+            move(100);
+        }
+
+        var timer = null;
+
+        function move(iTarget){
+            var oDiv = document.getElementById('div1');
+
+            clearInterval(timer);
+
+            timer = setInterval(function(){
+                var iSpeed = (iTarget - oDiv.offsetWidth) / 8;
+                iSpeed = iSpeed > 0 ? Math.ceil(iSpeed):Math.floor(iSpeed);
+
+                if(oDiv.offsetWidth == iTarget){
+                    clearInterval(timer);
+
+                }
+                else {
+                    oDiv.style.width = oDiv.offsetWidth + iSpeed + 'px';
+                }
+            }, 30);
+
+
+
+        }
+
+    };
+
+    </script>
+</head>
+<body >
+
+
+    <div id="div1" >
+
+</div>
+</body>
+</html>

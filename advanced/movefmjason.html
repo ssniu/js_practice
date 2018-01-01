@@ -1,0 +1,47 @@
+<!Doctype html>
+<html>
+<head>
+    <title>speedup 01</title>
+    <style>
+
+    div {
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin-top: 50px;
+
+    }
+    </style>
+    <script src="movefm01.js"></script>
+    <script>
+    //using jason to move multiple attributes at the same time
+    function setStyle(obj, json){
+        var attr = '';
+        for( attr in json){
+            obj.style[attr] = json[attr];
+        }
+    }
+
+    window.onload = function(){
+        var oDiv = document.getElementById('div1');
+        var oBtn = document.getElementById('btn1');
+
+        setStyle(oDiv, {width: '200px', height: '200px', background: 'red'});
+
+        oBtn.onclick = function(){
+
+            move(oDiv, 'width', 200);
+            move(oDiv, 'height', 200);
+
+        }
+    };
+
+
+    </script>
+</head>
+<body >
+    <input type="button" id="btn1" value="move"/>
+<div id="div1"></div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!Doctype html>
+<html>
+<head>
+    <title>expand/abstract text</title>
+    <style>
+    p {
+        width: 400px;
+        height: 500px;
+
+        border: 1px solid #201768;
+        margin: 50px 100px;
+    }
+    span {
+        background: yellow;
+    }
+    </style>
+
+    <script>
+    window.onload = function(){
+        var oP = document.getElementsByTagName('p')[0];//only one p
+        var aInput = document.getElementsByTagName('input');
+
+
+        aInput[2].onclick = function(){
+            var str = aInput[0].value;
+            var str2 = aInput[1].value;
+            if(!str) return ;//if the entery is blank, return to original status
+
+
+            oP.innerHTML = oP.innerHTML.split(str).join('<span>' + str2 + '</span>');
+        };
+    };
+
+
+    </script>
+</head>
+<body>
+    <input type="text" />
+    <input type="text" />
+    <input type="button" value="switch"/>
+    <p>
+        Bears are carnivoran mammals of the family Ursidae.
+        Bears are classified as caniforms, or doglike carnivorans.
+        Although only eight species of bears are extant, they are widespread,
+        appearing in a wide variety of habitats throughout the Northern
+        Hemisphere and partially in the Southern Hemisphere. Bears are
+        found on the continents of North America, South America, Europe,
+         and Asia. Common characteristics of modern bears include large bodies
+         with stocky legs, long snouts, small rounded ears, shaggy hair,
+        plantigrade paws with five nonretractile claws, and short tails.
+
+    </p>
+
+</body>
+</html>

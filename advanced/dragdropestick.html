@@ -1,0 +1,55 @@
+<!Doctype html>
+<html>
+<head>
+    <title>movement 01</title>
+    <style>
+    #div1 {
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+        position: absolute;
+        left: 0;
+        top:50px;
+    }
+
+    </style>
+
+    <script>
+    window.onload = function(){
+
+        var oBtn = document.getElementById('btn1');
+        oBtn.onclick = move;
+
+        function move(){
+            var oDiv = document.getElementById('div1');
+
+            var timer = null;
+
+            clearInterval(timer);
+
+            timer = setInterval(function(){
+                var iSpeed = 2;
+                if(oDiv.offsetLeft >= 300){
+                    clearInterval(timer);
+                }else {
+                    oDiv.style.left = oDiv.offsetLeft + iSpeed + 'px';
+                }
+
+            }, 30);
+
+
+
+        }
+
+    };
+
+    </script>
+</head>
+<body >
+<input type="button" value="move" id="btn1" />
+<div id="div1" >
+
+
+</div>
+</body>
+</html>

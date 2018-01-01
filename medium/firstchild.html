@@ -1,0 +1,46 @@
+<!Doctype html>
+<html>
+<head>
+    <title>array splice</title>
+    <style>
+
+    </style>
+
+    <script>
+    window.onload = function(){
+        var oUl = document.getElementById('ul1');
+        alert(oUl.firstChild);
+        /* firstElementChild */
+        /*if(oUl.firstElementChild){
+            oUl.firstElementChild.style.backgrond = 'red';
+        }else {
+            oUl.firstChild.style.backgrond = 'red';//IE 7
+        }*/
+        var oFirst = oUl.firstElementChild || oUl.firstChild;
+        oFirst.style.backgrond = 'red';
+
+        /* lastChild and lastElementChild */
+        /* nextSibling  nextElementSibling  */
+
+        /* parentNode */
+        /* offsetParent -- closest parent node which has position,  if the parent node
+        does not have position, the default offsetParent is body
+        eg: oDiv3.offsetParent.tagName */
+        /* offsetLeft[Top] -- current element to the parent position */
+        /* offsetWidth -- no-margin */
+        
+
+
+    };
+
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

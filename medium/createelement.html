@@ -1,0 +1,44 @@
+<!Doctype html>
+<html>
+<head>
+    <title>array splice</title>
+    <style>
+
+    </style>
+
+    <script>
+    window.onload = function(){
+        var oUl = document.getElementById('ul1');
+        var oBtn = document.getElementById('btn1');
+        var otxt = document.getElementById('txt1');
+        /* create elements dynamically */
+
+        var oLi = document.createElement('li');
+        //add li to the ul block
+        oLi.innerHTML =  oTxt.value ;
+        /* appendChild()*/
+        /* oUl.appendChild(oLi); // add elements to the next
+        /* insertBefore() */
+        /* oUl.insertBefore(oLi, oUl.children[0]);*/
+
+        var oA = document.createElement('a');
+        oA.innerHTML = 'delete';
+        oA.href = 'javascript:;';
+        oA.onclick = function(){
+            oUl.removeChild(this.parentNode);
+        }
+
+
+
+    };
+
+    </script>
+</head>
+<body>
+<input type="text" id="txt1" />
+<input type="button" id="btn1" />
+<ul id="ul1">
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!Doctype html>
+<html>
+<head>
+    <title>speedup 01</title>
+    <style>
+
+    div {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+    }
+    </style>
+
+    <script>
+    //inheretence
+    function Person(name, sex){
+        this.name = name;
+        this.sex = sex;
+    }
+    Person.prototype.showname = function(){
+
+    }
+
+    function Worker(name,sex,job){
+        //use the constructor from parent level
+        Person.call(this,name,sex);
+        this.job = job;
+    }
+    //use prototype to use parent methods
+    Worker.prototype = Person.prototype;
+    Worker.prototype.showJob = function(){
+        alert(this.job);
+    }
+
+    var w = new Worker('name1','m','sales');
+    Person.prototype.showjob; //Person has showjob method
+
+    //create a child method, but the parent will not have this method
+    for(var i in Person.prototype){
+        Worker.prototype[i] = Person.prototype[i];
+    }
+    // for loop to add the parent method to child method 
+    </script>
+</head>
+<body >
+<div id="div1"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!Doctype html>
+<html>
+<head>
+    <title>zoom in/out</title>
+    <style>
+
+
+    </style>
+    <script>
+    window.onload = function(){
+        var oP = document.getElementById('p1');
+
+        var oBtn1 = document.getElementById('btn1');
+        var oBtn2 = document.getElementById('btn2');
+
+        var num = 15;
+
+        oBtn1.onclick = function(){
+            if(num < 22){
+                num++;
+            }
+
+            oP.style.fontSize = num + 'px';
+        };
+        oBtn2.onclick = function(){
+            num--;
+            oP.style.fontSize = num + 'px';
+        };
+
+
+    };
+    // styleFloat/cssFloat
+    </script>
+</head>
+<body>
+    <input id="btn1" type="button" value="in"/>
+    <input id="btn2" type="button" value="out"/>
+
+    <p id="p1" >
+        Bears are carnivoran mammals of the family Ursidae. Bears are classified as
+        caniforms, or doglike carnivorans. Although only eight species of bears are
+        extant, they are widespread, appearing in a wide variety of habitats throughout
+        the Northern Hemisphere and partially in the Southern Hemisphere. Bears are
+        found on the continents of North America, South America, Europe, and Asia.
+        Common characteristics of modern bears include large bodies with stocky legs,
+        long snouts, small rounded ears,
+        shaggy hair, plantigrade paws with five nonretractile claws, and short tails.
+    </p>
+
+</body>
+</html>

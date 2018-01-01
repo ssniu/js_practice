@@ -1,0 +1,141 @@
+<!Doctype html>
+<html>
+<head>
+    <title>qq friends lists</title>
+    <style>
+        ul, h2{
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            list-style: none;
+        }
+        #list {
+            width: 240px;
+            border: 1px solid #7e9fd3;
+            margin:0 auto;
+        }
+        #list .lis{
+
+        }
+        #list .active{
+            background: #ea8533;
+        }
+        #list h2 {
+            height: 30px;
+            line-height: 30px;
+            text-indent: 20px;
+            background: url(./images/i.png) no-repeat 5px center;
+            color: #4e8bed;
+        }
+        #list ul{
+            display: none;
+        }
+        #list ul li {
+            line-height: 24px;
+            border-bottom: 1px solid #4172c1;
+            text-indent: 24px;
+        }
+        #list ul .hover {
+            background: #874006;
+        }
+    </style>
+    <script>
+    window.onload = function(){
+
+        var oUl = document.getElementById('list');
+
+        var aH2 = oUl.getElementsByTagName('h2');
+
+        var aUl = oUl.getElementsByTagName('ul');
+        var aLi=null;
+        var arrLi = [];
+//display the item lists
+        for(var i = 0; i < aH2.length; i++){
+            aH2[i].index = i;
+            aH2[i].onclick = function(){
+
+                for(var i = 0; i < aH2.length; i++){
+                    if(i != this.index){
+                        aUl[i].style.display = 'none';
+                        aH2[i].className = '';
+                    }
+                }
+                if(this.className == ''){
+                    aUl[this.index].style.display ='block';
+                    this.className ='active';
+                }else {
+                    aUl[this.index].style.display ='none';
+                    this.className ='';
+                }
+
+            };
+        }
+        // add items to the list
+        for(var i = 0; i < aUl.length; i++){
+            aLi = aUl[i].getElementsByTagName('li');
+            for(var j = 0; j < aLi.length; j++){
+                arrLi.push(aLi[j]);
+            }
+        }
+        //hover over the items in the list
+        for(var i = 0; i <arrLi.length; i++){
+            arrLi[i].onclick = function(){
+                for(var i = 0; i < arrLi.length; i++){
+                    if(arrLi[i] != this){
+                        arrLi[i].className = '';
+                    }
+                }
+                if(this.className == ''){
+                    this.className = 'hover';
+                }else
+                this.className = '';
+            }
+        }
+
+    };
+    </script>
+</head>
+<body>
+<ul id="list">
+    <li class="lis">
+        <h2 >friends</h2>
+        <ul>
+            <li>f1</li>
+            <li>f2</li>
+            <li>f3</li>
+            <li>f4</li>
+        </ul>
+    </li>
+    <li class="lis">
+        <h2>family</h2>
+        <ul>
+            <li>fa1</li>
+            <li>fa2</li>
+            <li>fa3</li>
+            <li>fa4</li>
+        </ul>
+    </li>
+    <li class="lis">
+        <h2>company</h2>
+        <ul>
+            <li>c1</li>
+            <li>c2</li>
+            <li>c3</li>
+            <li>c4</li>
+        </ul>
+    </li>
+    <li class="lis">
+        <h2>blocked</h2>
+        <ul>
+            <li>b1</li>
+            <li>b2</li>
+            <li>b3</li>
+            <li>b4</li>
+
+        </ul>
+    </li>
+
+</ul>
+</body>
+</html>

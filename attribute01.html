@@ -1,0 +1,45 @@
+<!Doctype html>
+<html>
+<head>
+    <title>zoom in/out</title>
+    <style>
+
+    .red {
+        width: 300px;
+        height: 300px;
+        border: 1px solid gray;
+        background: red;
+    }
+    .yellow {
+        width: 300px;
+        height: 300px;
+        border: 1px solid gray;
+        background: yellow;
+    }
+    </style>
+    <script>
+    window.onload = function(){
+        var oDiv = document.getElementById('div1');
+
+        var oBtn1 = document.getElementById('btn1');
+        var oTxt1 = document.getElementById('txt1');
+        var oTxt2 = document.getElementById('txt2');
+//oBtn1['onclick']
+        oBtn1.onclick = function(){
+            oDiv.style[oTxt1.value] = oTxt2.value;
+        }
+
+    };
+    </script>
+</head>
+<body>
+
+        Attribute <input id="txt1" type="text" />
+        <input id="txt2" type="text" />
+        <input id="btn1" type="button" value="red"/>
+    </hr>
+    <div id="div1">
+        <img src="../images/1.png" alt="img1" />
+    </div>
+</body>
+</html>

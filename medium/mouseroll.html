@@ -1,0 +1,40 @@
+<!Doctype html>
+<html>
+<head>
+    <title>resize window </title>
+    <style>
+
+
+    #div1 {
+        width: 100px;
+        height: 100px;
+        background: red;
+
+    }
+    </style>
+    <script>
+
+    window.onload = function(){
+
+        var oDiv = document.getElementById('div1');
+        //onmousewheel: ie/chrome
+        // FF: DOMMouseScroll, have to use addEventListener
+
+
+        oDiv.onmousewheel = fn;
+        oDiv.addEventListener('DOMMouseScroll', fn, false);
+        
+
+        function fn(){
+            alert(1);
+        }
+
+    };
+
+    </script>
+</head>
+<body >
+
+<div id="div1"></div>
+</body>
+</html>

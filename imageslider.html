@@ -1,0 +1,77 @@
+<!Doctype html>
+<html>
+<head>
+    <title>zoom in/out</title>
+    <style>
+div {
+    margin: 0;
+
+
+}
+
+
+    </style>
+    <script>
+    window.onload = function(){
+
+        var oDiv = document.getElementById('pic');
+
+        var oImg = oDiv.getElementsByTagName('img')[0];
+        var oP = oDiv.getElementsByTagName('p')[0];
+        var oSpan = oDiv.getElementsByTagName('span')[0];
+        var oUl = oDiv.getElementsByTagName('ul')[0];
+        var aLi = oUl.getElementsByTagName('li');
+
+        var arrUrl = [
+            'https://www.petfinder.com/wp-content/uploads/2013/05/120251710-632x3531.jpg',
+            'http://www.partnersforhealthypets.org/healthypetcheckup/assets/pets-fcb53b73523cd42be71be807ca0d6aaf.jpg',
+            'http://www.sittersolutions.net/wp-content/uploads/2014/02/pet-sitting-pg.jpg',
+            'https://images-na.ssl-images-amazon.com/images/G/01/img17/pet-products/vertical-store/1025139_us_pets_sns_upd_vd-hero_1920x693._CB521773290_.jpg',
+            'https://images-na.ssl-images-amazon.com/images/G/01/img15/pet-products/subcat_hero/23686_pets_vertical_store_dogs_7._CB313630035_.jpg'];
+        var arrSrc=['img01','img02','img03','img04','img05'];
+        var n = 0;
+
+
+        //original image
+        oImg.src = arrUrl[n];
+        oSpan.innerHTML = 1 + n + '/' + arrUrl.length;
+        oP.innerHTML = arrSrc[n];
+        aLi[n].className = 'active';
+
+        for(var i = 0; i < arrUrl.length; i++){
+            oUl.innerHTML += '<li></li>';
+        }
+
+        for(var i = 0; i < aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+                oImg.src = arrUrl[this.index];
+                oP.innerHTML = arrSrc[this.index];
+                oSpan.innerHTML = this.index + 1 + '/' +aLi.length;
+            }
+        }
+
+        for(var i = 0; i<Ali.length; i++){
+            aLi[i].className='';
+    }
+            this.className='active';
+
+            /*oldLi.className = '';
+            oldLi = this;
+            this.className = 'active';*/
+    };
+    </script>
+</head>
+<body>
+<div id="pic">
+    <span></span>
+    <p>Loading...</p>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>

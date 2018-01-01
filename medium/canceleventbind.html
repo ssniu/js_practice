@@ -1,0 +1,58 @@
+<!Doctype html>
+<html>
+<head>
+    <title>event objects</title>
+    <style>
+    #div1 {
+        width: 150px;
+        height: 150px;
+        background: red;
+        left:0;
+        top:100px;
+        position: absolute;
+    }
+
+    #div2 {
+         width: 50px;
+         height: 50px;
+         position: absolute;
+         right: -50px;
+         top: 70px;
+         background: black;
+         color: white;
+
+         text-align: justify;
+    }
+    </style>
+
+    <script>
+    window.onload = function(){
+
+        var oDiv = document.getElementById('div1');
+
+        // first: cancel the bind
+        document.onclick = fn1;
+        document.onclick = null;
+        //second: obj.detachEvent(event, function); -- ie
+        // obj.removeEventListerner(event, function, captureornot);
+        //instance:
+        /*
+        document.addEventListerner('click', fn1, false);
+        document.addEventListerner('click', fn1, true);
+        document.removeEventListerner('click', fn1, false); -- remove the false one
+        */
+
+
+    };
+
+    </script>
+</head>
+<body >
+
+<div id="div1" >
+    <div id="div2">
+        </div id="div3"></div>
+    share</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!Doctype html>
+<html>
+<head>
+    <title>event focus</title>
+    <style>
+
+    </style>
+
+    <script>
+    window.onload = function(){
+
+        /* onfocus: click/tab/js , attributes input and a have focus event;
+
+        */
+        var oTxt = document.getElementById('txt1');
+        oTxt.onfocus = function(){
+            if(this.value == 'please enter your name'){
+                this.value = ''; // clear the value of text
+            }
+
+        };
+
+        //clear the focus
+        oTxt.onblur = function(){
+            if(this.value == '' || this.value.charAt(0) ==' '){
+                this.value = 'please enter your name';
+            }
+        }
+
+        //set the focus
+        oTxt.focus();
+        //clear the focus
+        //oTxt.blur();
+        //obj.select()
+        var oBtn = document.getElementById('btn1');
+        oBtn.onclick = function(){
+            oTxt.select();//select all text in the text box
+        }
+        //put the cursor at the end
+        var oTxt2 = document.getElementById('txt2');
+        oTxt2.onfocus = function(){
+            if(this.value = this.value){
+                oTxt2.focus();
+            }
+        };
+
+    };
+
+    </script>
+</head>
+<body>
+<input type"text" id ="txt1" name="focusevent" value="please enter your name"/>
+<input type="button" value="selectAll" id="btn1" />
+<!--<input type="text" value="put cursor at the end" id="txt2"
+        onfocus="this.value = this.value;"/>-->
+        <input type="text" value="put cursor at the end" id="txt2" />
+
+</body>
+</html>

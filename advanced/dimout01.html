@@ -1,0 +1,62 @@
+<!Doctype html>
+<html>
+<head>
+    <title>dimout 01</title>
+    <style>
+    #img1 {
+        filter:alpha(opacity:30);//IE
+        opacity: 0.3;
+    }
+
+    </style>
+
+    <script>
+    window.onload = function(){
+        var timer = null;
+        var temp = 30;
+        var oImg = document.getElementById('img1');
+        oImg.onmouseover = function(){
+            move(100);
+        }
+        oImg.onmouseout = function(){
+            move(30);
+        }
+
+
+        function move(iTarget){
+
+            var oImg = document.getElementById('img1');
+
+            clearInterval(timer);
+            timer = setInterval(function(){
+                var iSpeed = 0;
+
+                if(temp <= iTarget){
+                    iSpeed = 5;
+                }else {
+                    iSpeed = -5;
+                }
+
+                if(temp == iTarget){
+                    clearInterval(timer);
+                }else {
+                    temp += iSpeed;
+                    oImg.style.filter = 'alpha(opacity:' + temp + ')';
+                    oImg.style.opacity = temp / 100;
+                }
+
+            }, 30);
+        }
+
+};
+
+    </script>
+</head>
+<body >
+
+
+<img src="33.jpg" id="img1" />
+
+</div>
+</body>
+</html>

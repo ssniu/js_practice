@@ -1,0 +1,51 @@
+<!Doctype html>
+<html>
+<head>
+    <title>event objects</title>
+    <style>
+    #div1 {
+        width: 150px;
+        height: 150px;
+
+        border: 1px solid red;
+
+        display: none;
+    }
+    </style>
+
+    <script>
+    window.onload = function(){
+
+        //when an element received an event, will pass it to the parent-element
+
+        var oDiv = document.getElementById('div1');
+        var oBtn = document.getElementById('btn1');
+
+        oBtn.onclick=function(){
+            oDiv.style.display = 'block';
+
+        }
+        //the div will appear and then disappear in 1000;
+        /* oBtn.onclick=function(){*/
+        //if you have more elements in a page, click any element, will hide div
+        document.onclick=function(){
+            //setTimeout to hide the div1
+            setTimeout(function(){
+                oDiv.style.display = 'none';
+            }, 1000);
+        };
+//default behavior is : bubble
+//prevent this default behavior
+  //event.cancenBubble = true;
+  
+
+    };
+
+    </script>
+</head>
+<body >
+    <input type="button" value="btn" id="btn1" />
+<div id="div1" >
+</div>
+</body>
+</html>

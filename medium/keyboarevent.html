@@ -1,0 +1,62 @@
+<!Doctype html>
+<html>
+<head>
+    <title>event objects</title>
+    <style>
+    #div1 {
+        width: 200px;
+        height: 200px;
+        background: red;
+        position: absolute;
+    }
+    </style>
+
+    <script>
+    window.onload = function(){
+
+        var oDiv = document.getElementById('div1');
+
+        //responsive elements can accepte the keyboard event
+        //oDiv not able to use keyboard , use document instead
+        document.onkeydown = function (ev){
+            var ev = ev || event;
+            swtich(ev.keyCode){
+                 case 37:
+                  oDiv.style.left = oDiv.offsetLeft - 10 + 'px';
+                  break;
+                 case 38:
+                    oDiv.style.top = oDiv.offsetTop - 10 + 'px';
+                    break;
+                 case 39:
+                      oDiv.style.right = oDiv.offsetRight - 10 + 'px';
+                      break;
+                 case 40:
+                        oDiv.style.bottom = oDiv.offsetBottom - 10 + 'px';
+                        break;
+            }
+        };
+
+        /*
+        prevent the default behavior: return false
+        document.onkeydown = function(){
+            return false;
+    }
+
+        */
+        //oncontextmenu: right-click menu
+        
+
+
+    };
+
+    </script>
+</head>
+<body >
+
+<div id="div1" >
+    <div id="div2">
+        </div id="div3"></div>
+    share</div>
+</div>
+</body>
+</html>

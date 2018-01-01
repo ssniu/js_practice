@@ -1,0 +1,58 @@
+<!Doctype html>
+<html>
+<head>
+    <title>speedup 01</title>
+    <style>
+    #div1 {
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+        position: absolute;
+        left: 0;
+        top:50px;
+    }
+
+    </style>
+
+    <script>
+
+
+    window.onload = function(){
+        var timer = null;
+
+        var oBtn = document.getElementById('btn1');
+        oBtn.onclick = function(){
+            move(600);
+        }
+
+
+        function move(iTarget){
+
+            var oDiv = document.getElementById('div1');
+
+            clearInterval(timer);
+            timer = setInterval(function(){
+                //change the speed when moving
+                var iSpeed = (iTarget - oDiv.offsetLeft)/8;
+
+                if(oDiv.offsetLeft >= iTarget){
+                    clearInterval(timer);
+                }else {
+                    oDiv.style.left = oDiv.offsetLeft + iSpeed + 'px';
+                }
+
+            }, 30);
+        }
+
+};
+
+    </script>
+</head>
+<body >
+
+
+<div id="div1" ></div>
+<input type="button" id="btn1" value="move"/>
+</div>
+</body>
+</html>

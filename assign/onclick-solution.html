@@ -1,0 +1,172 @@
+<!Doctype html>
+<html>
+<head>
+    <title>Assign 1 - solution</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        padding: 20px;
+        margin-right: 20px;
+    }
+
+    #box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+        margin-left: 20px;
+
+        background: white;
+    }
+    /*#floats{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:#000;
+        opacity:0;
+        z-index:1;
+    }*/
+
+    #setting {
+        width:350px;
+        height: 300px;
+        border: 15px solid gray;
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+        display: none;
+    }
+    .option {
+        padding: 20px;
+    }
+
+    .option span {
+        display: inline-block;
+        border: 1px solid black;
+        padding: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    #bgRed {
+        background: red;
+    }
+    #bgYellow{
+        background: yellow;
+    }
+    #bgGreen {
+        background: green;
+    }
+    .last {
+        text-align: center;
+    }
+
+
+    </style>
+    <script>
+    window.onload = function() {
+        var oBox = document.getElementById('box');
+        var oBtn = document.getElementById('set');
+        var oSet = document.getElementById('setting');
+        //var oFlt = document.getElementById('floats');
+        //buttons to change the styles
+        var oRed = document.getElementById('bgRed');
+        var oYel = document.getElementById('bgYellow');
+        var oGrn = document.getElementById('bgGreen');
+        var oW2 = document.getElementById('wid200');
+        var oW3 = document.getElementById('wid300');
+        var oW4 = document.getElementById('wid400');
+        var oH2 = document.getElementById('hei200');
+        var oH3 = document.getElementById('hei300');
+        var oH4 = document.getElementById('hei400');
+        //buttons to reset or confirm the changes
+        var oReset = document.getElementById('reset');
+        var oDone = document.getElementById('ok');
+
+        oBtn.onclick = function(){
+
+            oSet.style.display = 'block';
+
+        };
+        //click on done button, the menu block disappears
+        oDone.onclick = function(){
+            oSet.style.display = 'none';
+        };
+
+       // set the style of div when clicking on various buttons
+        oRed.onclick = function(){
+            oBox.style.backgroundColor = 'red';
+        };
+        oYel.onclick = function(){
+            oBox.style.backgroundColor = 'yellow';
+        };
+        oGrn.onclick = function(){
+            oBox.style.backgroundColor = 'green';
+        };
+        oW2.onclick = function(){
+            oBox.style.width = 200 + 'px';
+        };
+        oW3.onclick = function(){
+            oBox.style.width = 300 + 'px';
+        };
+        oW4.onclick = function(){
+            oBox.style.width = 400 + 'px';
+        };
+        oH2.onclick = function(){
+            oBox.style.height = 200 + 'px';
+        };
+        oH3.onclick = function(){
+            oBox.style.height = 300 + 'px';
+        };
+        oH4.onclick = function(){
+            oBox.style.height = 400 + 'px';
+        };
+      //reset the div to original style
+        oReset.onclick = function(){
+            oBox.style.backgroundColor='white';
+            oBox.style.width = 100 + 'px';
+            oBox.style.height = 100 + 'px';
+        }
+
+    };
+
+    </script>
+</head>
+<body>
+    <!--<div id="floats"></div> -->
+    <p>Set the style for this square:
+        <input id="set" type="button" value="click it" />
+    </p>
+    <div id="box"></div>
+        <div id="setting">
+            <div class="option">
+                background colors:
+                <span id="bgRed">Red</span>
+                <span id="bgYellow">Ylow</span>
+                <span id="bgGreen">Green</span>
+            </div>
+            <div class="option">
+                width (px):
+                <span id="wid200">200</span>
+                <span id="wid300">300</span>
+                <span id="wid400">400</span>
+            </div>
+            <div class="option">
+                height (px):
+                <span id="hei200">200</span>
+                <span id="hei300">300</span>
+                <span id="hei400">400</span>
+            </div>
+            <div class="option last">
+
+                <span id="reset">Reset</span>
+                <span id="ok">Done</span>
+            </div>
+        </div>
+
+</body>
+</html>

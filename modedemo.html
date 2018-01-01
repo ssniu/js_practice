@@ -1,0 +1,45 @@
+<!Doctype html>
+<html>
+<head>
+    <title>mode demo
+    </title>
+    <style>
+ li{
+
+ }
+    </style>
+    <script>
+    window.onload = function(){
+        var aLi = document.getElementsByTagName('li');
+        var arr = ['red','blue','yellow'];
+        var str = '';
+
+        for(var i = 0; i < aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].style.background = arr[i % arr.length];
+            aLi[i].onmouseover = function(){
+                str = this.style.background;
+                this.style.background = 'gray';
+            };
+            aLi[i].onmouseout = function(){
+                this.style.background = str;
+            }
+        }
+
+
+    };
+    </script>
+</head>
+<body>
+<ul id="list">
+    <li> </li>
+    <li></li>
+    <li> </li>
+    <li></li>
+    <li> </li>
+    <li></li>
+    <li> </li>
+    <li></li>
+</ul>
+</body>
+</html>

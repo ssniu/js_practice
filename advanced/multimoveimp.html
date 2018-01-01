@@ -1,0 +1,71 @@
+<!Doctype html>
+<html>
+<head>
+    <title>speedup 01</title>
+    <style>
+
+    div {
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin-top: 50px;
+
+    }
+    </style>
+
+    <script>
+    window.onload = function(){
+        var aDiv = document.getElementsByTagName('div');
+        var i = 0;
+        for( i = 0; i < aDiv.length;i++){
+            aDiv[i].timer = null;//add timer to each object
+            aDiv[i].onmouseover = function(){
+                move(this,400);//use this to make the selected one to move
+
+            }
+            aDiv[i].onmouseout = function(){
+                move(this,100);//use this to make the selected one to move
+
+            }
+        }
+    };
+
+
+
+        function move(obj, iTarget){
+            // the bug: hover over the div quickly, they can not be back
+            //clearInterval(timer);
+            //set the timer to each object can fix it
+            clearInterval(obj.timer);
+
+            obj.timer = setInterval(function(){
+                var iSpeed = (iTarget - obj.offsetWidth) / 8;
+                iSpeed = iSpeed > 0 ? Math.ceil(iSpeed):Math.floor(iSpeed);
+
+                if(obj.offsetWidth == iTarget){
+                    clearInterval(obj.timer);
+
+                }
+                else {
+                    obj.style.width = obj.offsetWidth + iSpeed + 'px';
+                }
+            }, 30);
+        }
+
+
+    </script>
+</head>
+<body >
+
+
+    <div  >
+
+</div>
+<div  >
+
+</div>
+<div  >
+
+</div>
+</body>
+</html>

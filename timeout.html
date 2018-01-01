@@ -1,0 +1,32 @@
+<!Doctype html>
+<html>
+<head>
+    <title>setTimeout demo: change background images</title>
+    <style>
+    body {
+        background: url(img/1.jpg) no-repeat center 0;
+    }
+    img {
+        display: none;
+    }
+    </style>
+
+    <script>
+   window.onload = function(){
+
+        /* setTimeoutfn,1000); clearTimeout(setInterval(fn,1000)) */
+        var oImg = document.getElementById('ad');
+
+        setTimeout(function(){
+            oImg.style.display = 'inline-block';
+        },2000);
+
+        
+    };
+    </script>
+</head>
+<body>
+    <img id="ad" src="img/2.jpg" />
+
+</body>
+</html>

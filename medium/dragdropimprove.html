@@ -1,0 +1,57 @@
+<!Doctype html>
+<html>
+<head>
+    <title>event objects</title>
+    <style>
+    #div1 {
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+        position: absolute;
+
+    }
+    </style>
+
+    <script>
+    window.onload = function(){
+
+    //onmousedown -- select
+    // onmousemove -- move
+    // onmouseup = release
+    var oDiv = document.getElementById('div1');
+    oDiv.onmousedown = function(ev){
+        var ev = ev || event;
+        var disX = ev.clientX - this.offsetLeft;
+        var disY = ev.clientY - this.offsetTop;
+
+
+        oDiv.onmousemove = function(ev){
+            var ev = ev || event;
+            oDiv.style.left = ev.clientX - disX + 'px';
+            oDiv.style.top = ev.clientY - disY + 'px';
+
+        }
+        //cancel the move operation
+        oDiv.onmouseup = function(){
+            oDiv.onmousemove = null;
+            //or oDiv.onmousemove =  oDiv.onmouseup = null
+        }
+
+        return false;
+    }
+
+    // bug: if the text is selected, drag the block will drag the text around
+    //reason: browser's default behavior -- drag selected text around
+    // solution: prevent the default behavior when onmousedown
+    //setCapture(): the elements which set this method will lister all events
+    };
+
+    </script>
+</head>
+<body >
+
+<div id="div1" >
+
+</div>
+</body>
+</html>

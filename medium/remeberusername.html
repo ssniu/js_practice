@@ -1,0 +1,38 @@
+<!Doctype html>
+<html>
+<head>
+    <title>resize window </title>
+    <style>
+    </style>
+
+    <script>
+
+    window.onload = function(){
+
+        var oTxt = document.getElementById('txt1');
+        var oBtn1 = document.getElementById('btn1');
+        var oBtn2 = document.getElementById('btn2');
+
+        if(getCookie('username')){
+            oTxt.value = getCookie('username');
+        }
+        oBtn1.onclick = function(){
+            setCookie('username', oTxt.value, 5);
+        }
+        oBtn2.onclick = function(){
+            removeCookie('username');
+            oTxt.value = '';
+        }
+
+    };
+
+    </script>
+</head>
+<body >
+
+<input type="text" id="txt1"/>
+<input type="button" value = "save" id="btn1"/>
+<input type="button" value="delete" id="btn2"/>
+
+</body>
+</html>

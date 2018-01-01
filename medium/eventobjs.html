@@ -1,0 +1,57 @@
+<!Doctype html>
+<html>
+<head>
+    <title>event objects</title>
+    <style>
+    #div1 {
+        width: 150px;
+        height: 150px;
+        background: red;
+        position: absolute;
+    }
+    </style>
+
+    <script>
+    window.onload = function(){
+
+        /* events happens first and then events equals to a function,
+        if this function has param, this param is events object
+        */
+        /*
+        function fn1(ev) {
+            var ev = ev || event;
+            alert(ev);
+            alert(ev.clientx);
+        }
+        document.onclick = fn1;
+        //the position of mouse: clientx, clienty
+        */
+
+        //onmousemove: move the mouse events
+        // move the mouse depends on the time, if the mouse move to a different position,
+        // the evenets happened
+        var oDiv = document.getElementById('div1');
+
+        var i = 0;
+        document.onmousemove = function(ev){
+            //document.title = i++;
+            var ev = ev || event;
+            //if the page is scrollable, to make the drag work (match the clientx and clientY
+            // to the scrollable area)
+            var scrollTop = document.documentElement.scrollTop ||
+            document.body.scrollTop;
+            oDiv.style.left = ev.clientX + 'px';
+            oDiv.style.top = ev.clientY + scrollTop + 'px';//
+
+        }
+
+
+    };
+
+    </script>
+</head>
+<body style="height: 2000px;">
+<div id="div1" >
+</div>
+</body>
+</html>

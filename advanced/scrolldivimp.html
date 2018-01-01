@@ -1,0 +1,54 @@
+<!Doctype html>
+<html>
+<head>
+    <title>speedup 01</title>
+    <style>
+    body {
+        height: 1500px;
+    }
+    #div1 {
+        width: 200px;
+        height: 200px;
+        background:red;
+        position: absolute;
+        right:0;
+    }
+
+    </style>
+
+    <script>
+    window.onscroll = function(){
+        var oDiv = document.getElementById('div1');
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+        //oDiv.style.top = scrollTop + (document.documentElement.clientHeight - oDiv.offsetHeight)/2 + 'px';
+        var temp = scrollTop + (document.documentElement.clientHeight - oDiv.offsetHeight)/2;
+        move(temp);
+    }
+    var timer = null;
+    function move(iTarget){
+        var oDiv = document.getElementById('div1');
+
+        clearInterval(timer);
+        timer = setInterval(function(){
+            var iSpeed = (iTarget - oDiv.offsetTop)/10;
+            iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+            if(oDiv.offsetTop == iTarget){
+                clearInterval(timer);
+            }else {
+                oDiv.style.top = oDiv.offsetTop + iSpeed + 'px';
+            }
+        }, 30);
+    }
+
+
+    </script>
+</head>
+<body >
+
+
+<div id="div1" ></div>
+
+</div>
+</body>
+</html>

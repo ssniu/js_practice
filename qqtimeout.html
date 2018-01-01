@@ -1,0 +1,58 @@
+<!Doctype html>
+<html>
+<head>
+    <title>setTimeout qq</title>
+    <style>
+    #qq {
+         width: 200px;
+         height: 400px;
+         background: #9e1aa5;
+    }
+    #title {
+        width: 240px;
+        height: 160px;
+        background: #5d4aef;
+        position: absolute;
+        left: 220px;
+        top:10px;
+        display: none;
+    }
+    </style>
+    <script src="dollarsign.js">
+
+    </script>
+
+    <script>
+
+
+        $(function(){
+            var qq = $('qq');
+            var tt = $('title');
+            var timer = null;
+
+            qq.onmouseover = show;
+            qq.onmouseout = hide;
+
+            tt.onmouseover = show;
+            tt.onmouseout = hide;
+
+            function show(){
+                clearInterval(timer);
+                    tt.style.display = 'block';
+            }
+            function hide(){
+                timer = setTimeout(function(){
+                    tt.style.display = 'none';
+                }, 300);
+
+            }
+});
+
+    </script>
+</head>
+<body>
+    <div id="qq"></div>
+    <div id="title"></div>
+
+</body>
+</html>

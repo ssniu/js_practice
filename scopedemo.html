@@ -1,0 +1,63 @@
+<!Doctype html>
+<html>
+<head>
+    <title>e-commerce price</title>
+    <style>
+
+    </style>
+    <script>
+    window.onload = function(){
+        var oUl = document.getElementById('list');
+        var aLi=oUl.getElementsByTagName('li');
+
+        for(var i = 0; i < aLi.length; i++){
+            f1(aLi[i]);
+        }
+
+
+        function f1(oLi){
+            var aBtn = oLi.getElementsByTagName('input');
+            var oStrong = oLi.getElementsByTagName('strong')[0];
+            var oEm = oLi.getElementsByTagName('em')[0];
+            var oSpan = oLi.getElementsByTagName('span')[0];
+            var n1 = Number(oStrong.innerHTML);
+            var n2 = parseFloat(oEm.innerHTML);
+
+            aBtn[0].onclick=function(){
+                if(n1 > 0){
+                    n1--;
+                    oStrong.innerHTML = n1;
+                    oSpan.innerHTML = n1 * n2;
+                }
+
+            };
+
+            aBtn[1].onclick=function(){
+                n1++;
+                oStrong.innerHTML = n1;
+                oSpan.innerHTML = n1 * n2;
+            };
+        }
+    };
+    </script>
+</head>
+<body>
+<ul id="list">
+    <li>
+        <input type="button" value="-"/>
+        <strong>0</strong>
+        <input type="button" value="+"/>
+        price: <em>12.8</em>
+        total: <span>0</span>
+    </li>
+    <li>
+        <input type="button" value="-"/>
+        <strong>0</strong>
+        <input type="button" value="+"/>
+        price: <em>10.8</em>
+        total: <span>0</span>
+    </li>
+    <p>Total amount is : </p>
+</ul>
+</body>
+</html>

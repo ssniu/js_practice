@@ -1,0 +1,38 @@
+<!Doctype html>
+<html>
+<head>
+    <title>drag child</title>
+    <style>
+
+    #div1 {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+    }
+    #div2 {
+        width: 100px;
+        height: 100px;
+        left: 200px;
+        background: gray;
+        position: absolute;
+    }
+    </style>
+    <script src="drag.js"></script>
+    <script src="dragChild.js"></script>
+    <script>
+    window.onload = function(){
+        new Drag('div1');
+        new DragChild('div2');
+
+    }
+
+
+    </script>
+</head>
+<body >
+<div id="div1"></div>
+<div id="div2"></div>
+
+</body>
+</html>

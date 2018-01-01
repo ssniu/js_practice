@@ -1,0 +1,118 @@
+<!Doctype html>
+<html>
+<head>
+    <title>Assign 1 - popup</title>
+    <style>
+
+    body, html {
+        height: 100%;
+    }
+    #div1 {
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+        border: 1px solid #000;
+    }
+    #floats {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #000;
+    }
+
+    #popups {
+        position: absolute;
+        width: 400px;
+        height: 200px;
+        background: #fff;
+        border: 20px solid gray;
+        top:50%;
+        left: 50%;
+        display: none;
+    }
+    .choices {
+        margin: 15px 0;
+        text-align: center;
+    }
+    .btn5 {
+        background: gray;
+        font-size: 20px;
+        margin-top: 30px;
+        margin-left: 100px;
+    }
+
+    </style>
+    <script>
+    // window.onload = function(){
+    //     var oBtn = document.getElementById('btn1');
+    //     var oDiv1 = document.getElementById('div1');
+    //     var oDiv2 = document.getElementById('floats');
+    //     var oDiv3 = document.getElementById('popups');
+    //
+    //     oDiv1.addEventListener("click", function(){alert('a');});
+    //
+    //     //oBtn.onclick = function(){alert(9);};
+    //     // function(){
+    //     //
+    //     //     //oDiv2.style.opacity = '0.3';
+    //     //     //oDiv3.style.display = 'block';
+    //     //     alert(3);
+    //     //
+    //     // });
+    //
+    //     //aBtn2 = document.getElementById('btn1');
+    //     //aBtn3 = document.getElementById('btn1');
+    //     //aBtn4 = document.getElementById('btn1');
+    // };
+
+
+    </script>
+</head>
+<body>
+    <div id ="top">
+        <p>Select the style:</p>
+        <input type="button" id="btn1" value="click it" />
+    </div>
+    <div id="div1" ></div>
+    <div id="floats" >
+
+    </div>
+    <div id="popups">
+        <div class="choices">
+        <label>Background-color:
+            <input type="button" class="btn2" value="red" style="background: red;"/>
+            <input type="button" class="btn2" value="yellow" style="background: yellow;"/>
+            <input type="button" class="btn2" value="blue" style="background: blue;"/>
+        </label>
+     </div>
+     <div class="choices">
+        <label >Width(px):
+            <input type="button" class="btn3" value="200" />
+            <input type="button" class="btn3" value="300" />
+            <input type="button" class="btn3" value="400" />
+        </label>
+    </div>
+    <div class="choices">
+        <label>Height(px):
+            <input type="button" class="btn4" value="200" />
+            <input type="button" class="btn4" value="300" />
+            <input type="button" class="btn4" value="400" />
+        </label>
+    </div>
+    <div class="btn5">
+        <input type="button"  value="reset" />
+        <input type="button"  value="confirm" />
+
+    </div>
+    </div>
+
+    <script>
+    var oBtn = document.getElementById('btn1');
+    oBtn.onclick = function(){alert(9);};
+    </script>
+
+</body>
+</html>

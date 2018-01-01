@@ -1,0 +1,54 @@
+<!Doctype html>
+<html>
+<head>
+    <title>event objects</title>
+    <style>
+
+    </style>
+
+    <script>
+    window.onload = function(){
+
+        var oDiv = document.getElementById('div1');
+
+        // first: cancel the bind
+        document.onclick = fn1;
+        document.onclick = null;
+        /*
+        onkeydown/onkeyup
+        event.keyCode: number key, keyvalue
+        ctrlKey, shiftKey, altKey, boolean value;
+
+        */
+        /*
+        oTxt.onkeydown = function(){
+            alert(this.value); // delay, enter a, got blank, enter b, got a
+
+        }*/
+
+        /* try to use keyboard enter and submit result*/
+        if(ev.keyCode = 13 && ev.ctrlKey) {
+            var oLi = document.createElement('li');
+            oLi.innerHTML = this.value;
+
+            if(oUl.children[0]){
+                oUl.insertBefore(oLi, oUl.children[0]);
+
+            }else {
+                oUl.appendChild(oLi);
+            }
+        }
+
+    };
+
+    </script>
+</head>
+<body >
+
+<div id="div1" >
+    <div id="div2">
+        </div id="div3"></div>
+    share</div>
+</div>
+</body>
+</html>

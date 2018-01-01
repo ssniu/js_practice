@@ -1,0 +1,79 @@
+<!Doctype html>
+<html>
+<head>
+    <title>zoom in/out</title>
+    <style>
+    #content {
+        width: 400px;
+        height: 300px
+        border: 1px solid yellow;
+        margin: 40px auto 0;
+        position: relative;
+    }
+    #content a{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 175px;
+        text-decoration: none;
+        text-align: center;
+
+        opacity: 0.8;
+    }
+    #content a:hover {
+
+    }
+
+    #text {
+        position: absolute;
+        text-align: center;
+        bottom: 0;
+        left: 0;
+        height: 30px;
+        line-height: 30px;
+    }
+    #prev{
+        left: 10px;
+    }
+    #next {
+        right: 10px;
+    }
+    #text {
+        position:absolute;
+    }
+    #sp1{
+        position: absolute;
+    }
+    #img1{
+        margin: 35px 40px;
+        width: 300px;
+        height: 200px;
+    }
+    </style>
+    <script>
+    window.onload = function(){
+        var oDiv = document.getElementById('content');
+
+        var oA1 = document.getElementById('prev');
+        var oA2 = document.getElementById('next');
+        var oP = document.getElementById('text');
+        var oSpan = document.getElementById('sp1');
+        var oImg = document.getElementById('img1');
+
+
+    };
+    // styleFloat/cssFloat
+    </script>
+</head>
+<body>
+    <!-- arr push() -->
+    <div id="content">
+        <a id="prev" href=""><</a>
+        <a id="next" href="">></a>
+        <p id="text">The first image</p>
+        <span id="sp1"> 1/4
+        </span>
+        <img id="img1" src="../images/2.jpg" />
+    </div>
+</body>
+</html>

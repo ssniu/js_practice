@@ -1,0 +1,62 @@
+<!Doctype html>
+<html>
+<head>
+    <title>movement 01</title>
+    <style>
+
+
+    </style>
+
+    <script>
+    var str = 'abceds';
+    str.search('bc'); // find the first place of this string
+    str.substring(1,4);//find the index 1 to 3, 4 is excluded
+    str.split('-');
+    //find all digits in the string
+    var str2 = '12,3,4,5,6,dd dd cc mm ii';
+    var tmp = /\d+/g;
+    alert(str2.match(tmp));
+    var str='abced';
+    var re = nre RegExp('a', 'i');//i --> ignore the cap/lower
+    re.test(str);//check if the str has a inside
+    var re1 = /a/i;
+    //search by RegExp
+    var str3 = 'abcdeft';
+    str3.search(/b/);// == search 'b'
+    // \d --> digit;
+    var re=/\d+/g;//find all the digits
+    str.match(re);
+    str.replace('a','T');
+    str.replace(/a/gi, 'T');
+ //reg classes
+    //[abc]
+    var re=/1[abc]2/; // one of the characters inside square bracket
+    // === /1a2|1b2|1c2|/; must be a single character
+    //[0-9] or [a-z] == all numbers or all letters -- one character
+    //[^a] == all characters except a
+    //[^0-9a-z]
+
+    var str3 = '1a3 1b2';
+    str3.match(re);
+    var re = /<.+>/g;//. means everything
+    // \w: word == [a-z0-9_]
+    // \s == space:
+    //\D ==[^0-9]
+    //\W: [^a-z0-9_]
+    // \S: all except the space
+    // {n,m} == >= n <= m
+    //{n, } === >= n
+    // {, m} == <=m
+    //{n} == appears exxactly n times
+    // [1-9]\d{4,10}/g;
+
+    </script>
+</head>
+<body >
+<input type="button" value="move" id="btn1" />
+<div id="div1" >
+
+
+</div>
+</body>
+</html>

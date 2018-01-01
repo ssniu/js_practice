@@ -1,0 +1,81 @@
+<!Doctype html>
+<html>
+<head>
+    <title>resize window </title>
+    <style>
+    #div1 {
+        width: 150px;
+        height: 200px;
+        background: red;
+        position: absolute;
+        left: 500px;
+        top: 200px;
+    }
+
+    </style>
+
+    <script>
+
+    window.onload = function(){
+
+        var oDiv = document.getElementById('div1');
+
+         //resize1(oDiv);
+
+        //function resize1(obj){
+
+
+            oDiv.onmousedown = function(ev){
+
+                var ev = ev || event;
+                // .offsetWidth and .offsetLeft are the actual width and left of an element
+
+                var disW = this.offsetWidth;
+                var disL = this.offsetLeft;
+                var evX = ev.clientX;
+
+                var temp = '';
+                //right side
+                if(evX > disL + disW - 10){
+                    temp = 'right';
+
+                }
+                //left side
+                if(evX < disL + 10){
+                    temp = 'left';
+                }
+                document.onmousemove = function(ev){
+
+                    var ev = ev || event;
+                    if(disW - (ev.clientX - evX) > 50 ){
+                        switch(temp){
+                            case 'left':
+                                oDiv.style.width = disW - (ev.clientX - evX) + 'px';
+                                oDiv.style.left = disL + (ev.clientX - evX) + 'px';
+                                break;
+                            case 'right':
+                                oDiv.style.width = disW + (ev.clientX - evX) + 'px';
+                                break;
+                        }
+                    }else {
+                        oDiv.style.width = 50 + 'px';
+                    }
+
+                }
+            document.onmouseup = function(){
+                    document.onmousemove = document.onmouseup = null;
+                }
+                return false;
+         }
+  //}
+
+        };
+
+    </script>
+</head>
+<body >
+
+<div id="div1" ></div>
+
+</body>
+</html>

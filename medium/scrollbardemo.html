@@ -1,0 +1,71 @@
+<!Doctype html>
+<html>
+<head>
+    <title>resize window </title>
+    <style>
+    #div1 {
+        width: 30px;
+        height: 450px;
+        background: red;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+    #div2 {
+        width: 30px;
+        height: 30px;
+        background: black;
+        position: absolute;
+        left:0;
+        top: 0;
+    }
+
+    </style>
+
+    <script>
+
+    window.onload = function(){
+
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+
+            oDiv1.onmousedown = function(ev){
+
+                var ev = ev || event;
+
+                var disY = ev.clientY - this.offsetTop;
+
+                var maxTop = oDiv1.offsetHeight - oDiv2.offsetHeight;
+
+                document.onmousemove = function(ev){
+
+                    var ev = ev || event;
+                    var temp = ev.clientY - disY;
+                    if( temp < 0){
+                        temp = 0;
+                    }else if( temp > maxTop){
+                        temp = maxTop;
+                    }
+                    oDiv2.style.top = temp + 'px';
+
+                }
+
+                document.onmouseup = function(){
+                        document.onmousemove = document.onmouseup = null;
+                    }
+                    return false;
+             }
+  //}
+
+        };
+
+    </script>
+</head>
+<body >
+
+<div id="div1" >
+    <div id="div2"></div>
+</div>
+
+</body>
+</html>

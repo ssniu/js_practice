@@ -1,0 +1,100 @@
+<!Doctype html>
+<html>
+<head>
+    <title>event objects</title>
+    <style>
+    #div1 {
+        width: 150px;
+        height: 150px;
+        background: red;
+        left:0;
+        top:100px;
+        position: absolute;
+    }
+
+    #div2 {
+         width: 50px;
+         height: 50px;
+         position: absolute;
+         right: -50px;
+         top: 70px;
+         background: black;
+         color: white;
+
+         text-align: justify;
+    }
+    </style>
+
+    <script>
+    window.onload = function(){
+
+        //when an element received an event, will pass it to the parent-element
+
+        var oDiv = document.getElementById('div1');
+
+        //onmouseover/out
+        //apply the bubble rules to add events to div1
+        oDiv.onmouseover = function(){
+            this.style.left = '0px';
+        }
+
+        oDiv.onmouseout = function(){
+            this.style.left = '-150px';
+        }
+        // bind the event function
+        /* document.attachEvent('onclick', fn1)*/
+        // obj.addEventListener(event, function, capture);
+        //fn1() === fn1.call();
+        //call function, first param will change the this,
+        //second param is the function param list
+        /*
+        function fn1(a,b){
+        alert(this);
+        alert(a + b);
+    }
+     fn1();
+     fn1.call();
+     fn1.call(1,10,20);
+     fn1(null,10,20); -- null --> this
+    }
+        */
+
+        /* i have div1, div2, div3, output 1,2,3
+        false means if the event inside div2,or div3 is out, then run fn1
+        oDiv1.addEventListerner('click', fn1, false);
+        oDiv1.addEventListerner('click', fn1, false);
+        oDiv1.addEventListerner('click', fn1, false);
+        false output is 3,2,1
+        true means if the event is in, then run fn1;
+        oDiv1.addEventListerner('click', fn1, true);
+        oDiv1.addEventListerner('click', fn1, true);
+        oDiv1.addEventListerner('click', fn1, true);
+        true output is 1,2,3
+        */
+
+        //eg
+        /*
+        oDiv1.addEventListerner('click', function(){
+            alert(1);}, false);
+            oDiv1.addEventListerner('click', function(){
+                alert(3);}, true);
+                oDiv3.addEventListerner('click', function(){
+                    alert(2);}, false);
+            output is : 3,2,1
+    })
+
+        */
+
+    };
+
+    </script>
+</head>
+<body >
+
+<div id="div1" >
+    <div id="div2">
+        </div id="div3"></div>
+    share</div>
+</div>
+</body>
+</html>

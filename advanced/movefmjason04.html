@@ -1,0 +1,36 @@
+<!Doctype html>
+<html>
+<head>
+    <title>speedup 01</title>
+    <style>
+
+    div {
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin-top: 50px;
+        opacity: 0.3;
+    }
+    </style>
+    <script src="movefmjason2.js"></script>
+    <script>
+    window.onload = function(){
+        var oDiv = document.getElementById('div1');
+        var oBtn = document.getElementById('btn1');
+
+
+        oBtn.onclick = function(){
+
+            move(oDiv, {width: 105, height: 200, opacity: 100});
+        };
+    };
+
+
+    </script>
+</head>
+<body >
+    <input type="button" id="btn1" value="move"/>
+<div id="div1"></div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!Doctype html>
+<html>
+<head>
+    <title>setInterval demo: change background images</title>
+    <style>
+
+    </style>
+
+    <script>
+   window.onload = function(){
+
+        /* setInterval(fn,1000); clearInterval(setInterval(fn,1000)) */
+        var aBtn = document.getElementsByTagName('input');
+        var arrSrc = ['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg'];
+        var oBody = document.body;
+        var num = 0;
+        var timer = null;
+
+
+        //change background image
+        aBtn[0].onclick = function(){
+
+            clearInterval(timer); // fix the bug: not able to stop the multi-clicks
+            timer = setInterval(function(){
+                oBody.style.background = 'url(' + arrSrc[num] + ')';
+                num++;
+                num %= arrSrc.length;
+            }, 2000);
+        };
+        aBtn[1].onclick = function(){
+            clearInterval(timer);
+        };
+
+    };
+    </script>
+</head>
+<body>
+<input type="button" value="switch bg" />
+<input type="button" value="stop" />
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!Doctype html>
+<html>
+<head>
+    <title>speedup 01</title>
+    <style>
+    body {
+        height: 1500px;
+    }
+    #div1 {
+        width: 200px;
+        height: 200px;
+        background:red;
+        position: absolute;
+        right:0;
+    }
+
+    </style>
+
+    <script>
+    window.onscroll = function(){
+        var oDiv = document.getElementById('div1');
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+        oDiv.style.top = scrollTop + (document.documentElement.clientHeight
+            - oDiv.offsetHeight)/2 + 'px';
+
+    }
+
+
+    </script>
+</head>
+<body >
+
+
+<div id="div1" ></div>
+
+</div>
+</body>
+</html>

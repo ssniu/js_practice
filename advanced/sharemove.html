@@ -1,0 +1,83 @@
+<!Doctype html>
+<html>
+<head>
+    <title>movement 01</title>
+    <style>
+    #div1 {
+        width: 100px;
+        height: 200px;
+        background: red;
+        position: absolute;
+        left: -100px;
+        top:50px;
+
+    }
+ #div1 span {
+     width: 50px;
+     height: 60px;
+     background: blue;
+     line-height: 3em;
+     text-align: center;
+     left: 100px;
+     top: 70px;
+     position: absolute;
+ }
+ /* vertical centered
+    height: 90px;
+  line-height: 90px;
+  text-align: center;
+  border: 2px dashed #f69c55;
+  */
+    </style>
+
+    <script>
+    window.onload = function(){
+        var timer = null;
+        var oDiv = document.getElementById('div1');
+
+        oDiv.onmouseover = function(){
+            move();
+        }
+        oDiv.onmouseout = function(){
+            move2();
+        }
+        function move(){
+            var oDiv = document.getElementById('div1');
+            clearInterval(timer);
+            timer = setInterval(function(){
+
+                if(oDiv.offsetLeft == 0){
+                    clearInterval(timer);
+                }else {
+                    oDiv.style.left = oDiv.offsetLeft + 10 + 'px';
+                }
+
+            }, 30);
+        }
+
+        function move2(){
+            var oDiv = document.getElementById('div1');
+            clearInterval(timer);
+            timer = setInterval(function(){
+
+                if(oDiv.offsetLeft == -100){
+                    clearInterval(timer);
+                }else {
+                    oDiv.style.left = oDiv.offsetLeft - 10 + 'px';
+                }
+
+            }, 30);
+        }
+
+    };
+
+    </script>
+</head>
+<body >
+
+<div id="div1" >
+<span>share</span>
+
+</div>
+</body>
+</html>
